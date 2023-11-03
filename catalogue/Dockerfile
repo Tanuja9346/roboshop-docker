@@ -5,7 +5,7 @@ EXPOSE 8080
 WORKDIR /opt/server
 COPY package.json .
 # . means current directory
-COPY sever.js .
+COPY server.js .
 RUN npm install
 CMD ["nodejs", "nodejs"]
 
