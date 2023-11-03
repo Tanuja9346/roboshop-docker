@@ -8,6 +8,6 @@ COPY package.json .
 COPY server.js .
 RUN npm install
 ENV MONGO=true
-CMD ["nodejs", "nodejs"]
+CMD ["node", "server.js"]
 
 
