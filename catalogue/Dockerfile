@@ -7,6 +7,7 @@ COPY package.json .
 # . means current directory
 COPY server.js .
 RUN npm install
+ENV MONGO=true
 CMD ["nodejs", "nodejs"]
 
 
