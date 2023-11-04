@@ -9,9 +9,9 @@ services:
       - roboshop
   catalogue:
     image: catalogue:v1
-    container_name: catalogue
+    container_name: 'catalogue'
     networks:
-    - roboshop
+    - 'roboshop'
     depends_on:
     - mongodb
   redis:
