@@ -23,10 +23,10 @@ services:
     image: user:v1
     container_name: user
     networks:
-      - roboshop
+    - roboshop
     depends_on:
-      - mongodb
-      - redis
+    - mongodb
+    - redis
   web:
      image: web:v1
      container_name: web
