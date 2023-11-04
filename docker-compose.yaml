@@ -4,14 +4,14 @@ networks:
 services:
   mongodb:
     image: mongodb:v1
-    container_name: 'mongodb'
+    container_name: mongodb
     networks:
-      - 'roboshop'
+      - roboshop
   catalogue:
     image: catalogue:v1
-    container_name: 'catalogue'
+    container_name: catalogue
     networks:
-    - 'roboshop'
+    - roboshop
     depends_on:
     - mongodb
   redis:
@@ -29,11 +29,12 @@ services:
     - redis
   web:
      image: web:v1
-     container_name: 'web'
+     container_name: web
      networks:
-     - 'roboshop'
+     - roboshop
      ports:
      - "80:80"
      depends_on:
      - catalogue
      - user
+
