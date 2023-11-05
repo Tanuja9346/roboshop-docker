@@ -3,7 +3,7 @@ networks:
     driver: bridge
 services:
   mongodb:
-    image: joindevops/mongodb:v1
+    image: joindevops1/mongodb:v1
     container_name: mongodb
     networks:
     - roboshop
@@ -15,12 +15,12 @@ services:
     depends_on:
     - mongodb
   redis:
-     image: joindevops/redis
+     image: joindevops1/redis
      container_name: redis
      networks:
      - roboshop
   user:
-    image: joindevops/user:v1
+    image: joindevops1/user:v1
     container_name: user
     networks:
     - roboshop
@@ -28,7 +28,7 @@ services:
     - mongodb
     - redis
   cart:
-    image: joindevops/cart:v1
+    image: joindevops1/cart:v1
     container_name: cart
     networks:
     - roboshop
@@ -36,12 +36,12 @@ services:
     - redis
     - catalogue
   mysql:
-    image: joindevops/mysql:v1
+    image: joindevops1/mysql:v1
     container_name: mysql
     networks:
     - roboshop
   shipping:
-    image: joindevops/shipping:v1
+    image: joindevops1/shipping:v1
     container_name: shipping
     networks:
     - roboshop
@@ -49,7 +49,7 @@ services:
     - cart
     - mysql
   rabbitmq:
-    image: joindevops/rabbitmq
+    image: joindevops1/rabbitmq
     container_name: rabbitmq
     networks:
     - roboshop
@@ -58,7 +58,7 @@ services:
     - RABBITMQ_DEFAULT_PASS=roboshop123
 
   payment:
-    image: joindevops/payment:v1
+    image: joindevops1/payment:v1
     container_name: payment
     networks:
     - roboshop
@@ -67,7 +67,7 @@ services:
     - user
     - rabbitmq
   web:
-     image: joindevops/web:v1
+     image: joindevops1/web:v1
      container_name: web
      networks:
      - roboshop
